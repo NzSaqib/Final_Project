@@ -17,6 +17,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <service
+            android:name=".utility.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".utility.MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+
         <activity android:name=".homee.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,6 +49,13 @@
         <activity android:name=".Login.LoginActivity"></activity>
         <activity android:name=".Login.RegisterActivity"></activity>
         <activity android:name=".like.NextActivity"></activity>
+
+
+        <activity android:name=".SignedInActivity"/>
+        <activity android:name=".ChatActivity"/>
+        <activity android:name=".ChatroomActivity"/>
+        <activity android:name=".AdminActivity"/>
+        <activity android:name=".SettingsActivity"/>
     </application>
 
 </manifest>

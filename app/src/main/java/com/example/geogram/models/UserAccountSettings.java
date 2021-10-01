@@ -14,11 +14,13 @@ public class UserAccountSettings implements Parcelable {
     private String website;
     private String user_id;
     private String phone_number;
+    private String message;
+    private String timestamp;
 
     public UserAccountSettings(String description, String display_name,
                                long followers, long following,
                                long posts, String profile_photo,
-                               String username, String website, String user_id,String phone_number) {
+                               String username, String website, String user_id,String phone_number,String message,String timestamp) {
         this.description = description;
         this.display_name = display_name;
         this.followers = followers;
@@ -29,6 +31,8 @@ public class UserAccountSettings implements Parcelable {
         this.website = website;
         this.user_id = user_id;
         this.phone_number = phone_number;
+        this.message =  message;
+        this.timestamp = timestamp;
 
     }
 
@@ -49,7 +53,8 @@ public class UserAccountSettings implements Parcelable {
         website = in.readString();
         user_id = in.readString();
         phone_number=in.readString();
-
+        message=in.readString();
+        timestamp=in.readString();
     }
 
     public static final Creator<UserAccountSettings> CREATOR = new Creator<UserAccountSettings>() {
@@ -63,6 +68,22 @@ public class UserAccountSettings implements Parcelable {
             return new UserAccountSettings[size];
         }
     };
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
     public String getPhone_number() {
         return phone_number;
@@ -177,5 +198,6 @@ public class UserAccountSettings implements Parcelable {
         parcel.writeString(website);
         parcel.writeString(user_id);
         parcel.writeString(phone_number);
+        parcel.writeString(message);
     }
 }

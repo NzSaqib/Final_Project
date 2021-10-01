@@ -40,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
     FirebaseModels firebaseModels;
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference myRef;
+    public static boolean isActivityRunning;
 
     private String append = "";
 
@@ -164,7 +165,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 //add new user to database
 
-                firebaseModels.addNewUser(email,mUsername,"","","","");
+                firebaseModels.addNewUser(email,mUsername,"","","","","");
 
                 Toast.makeText(mContext, "Signup Successfully. Sending verification code to email", Toast.LENGTH_SHORT).show();
                 mAuth.signOut();
@@ -220,6 +221,7 @@ public class RegisterActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
+        isActivityRunning = true;
     }
 
     @Override
@@ -228,5 +230,6 @@ public class RegisterActivity extends AppCompatActivity {
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
+        isActivityRunning = false;
     }
 }

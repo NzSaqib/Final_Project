@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements MainfeedListAdapt
         tabLayout.setupWithViewPager(mViewPager);
 
         tabLayout.getTabAt(0).setIcon(R.drawable.camera);
-        tabLayout.getTabAt(1).setText("Geogram");
+        tabLayout.getTabAt(1).setText("ONE STOP");
         tabLayout.getTabAt(2).setIcon(R.drawable.send);
     }
     /**

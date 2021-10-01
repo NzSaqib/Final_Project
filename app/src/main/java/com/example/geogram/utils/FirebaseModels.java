@@ -389,7 +389,7 @@ public class FirebaseModels {
      * @param profile_photo
      */
 
-    public void addNewUser(String email, String username, String description, String website, String profile_photo,String  phone_number) {
+    public void addNewUser(String email, String username, String description, String website, String profile_photo,String  phone_number,String message) {
 
         User user = new User(userID,email, StringManipulation.condensUsername(username));
 
@@ -406,7 +406,7 @@ public class FirebaseModels {
                 StringManipulation.condensUsername(username)
                 ,
                 website,
-                userID,phone_number
+                userID,phone_number,message,getTimeStamp()
         );
 
         myRef.child(mContext.getString(R.string.dbname_user_account_settings))

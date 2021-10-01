@@ -17,7 +17,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:hint="Search by B_Group or L_location"
+                    android:hint="search by user name"
                     android:textSize="20sp"
                     android:textColor="@color/black"
                     android:layout_marginStart="5dp"
